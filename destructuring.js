@@ -55,12 +55,9 @@ function greeting( obj ) {
 
 //Code Here
 function totalPopulation(object){
-  const {utah} = object
-  const {arizona} = object
-  const {california} = object
-  const {texas} = object
-  const allFourStates = utah + arizona + california + texas
-  return allFourStates
+  const {utah , arizona , california , texas} = object
+
+  return object
 }
 
 
