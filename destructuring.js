@@ -55,9 +55,12 @@ function greeting( obj ) {
 
 //Code Here
 function totalPopulation(object){
-  const {utah , arizona , california , texas} = object
-
-  return object
+  const {utah} = object
+  const {arizona} = object
+  const {california} = object
+  const {texas} = object
+  const allFourStates = utah + arizona + california + texas
+  return allFourStates
 }
 
 
@@ -125,7 +128,7 @@ function numberGroups({a, b, c}){
   if(a.length > b.length && a.length > c.length){
     return a
   }else if(b.length > a.length && b.length > c.length){
-    return b
+    
   }else {
     return c
   }

@@ -222,11 +222,10 @@ function startsWithK(obj){
 //Code Here
 function hiddenTreasure(obj){
   for(let key in obj){
-    let objects = obj[key]
     if(obj[key].includes('treasure')){
-      console.log('hello')
+      // console.log('hello')
     }else{
-      console.log('deleted')
+      // console.log('deleted')
       delete obj[key]
     }
   }
