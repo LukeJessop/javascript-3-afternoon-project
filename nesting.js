@@ -51,7 +51,28 @@ var employees = [
 */
 
 //Code Here
+function employeeUpdater(){
+  // console.log("First console.log", employees[2])\
+  
+  
+  for(let i = 0; i <employees.length ; i++){
+    // console.log("first", employees)
+    for(let key in employees){
 
+      // console.log(employees[key].department)
+
+      if (employees[key].department === 'Research and Development'){
+        employees[key].department = 'HR'
+      }
+
+      if (employees[key].firstName === 'Theo'){
+        delete employees[key]
+        // console.log("delete")
+      }
+    }
+  }
+  return employees
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -69,15 +90,25 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+function removeDuplicates(){
+  for(let i = 0; i < workplaceAccidents.length; i++){
+    // console.log(`currently i is ${i}`)
+    for(let j = i + 1; j < workplaceAccidents.length; j++){
+      // console.log(`currently j is ${j}`)
+      if(workplaceAccidents[i] === workplaceAccidents[j]){
+        //this is where we remove duplicate
+        workplaceAccidents.splice(j, 1);
+      }
+    }
+  }
+  return workplaceAccidents
+}
 
 
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
-var cat = {
-  name: 'Fluffy',
-  catFriends: [
+var cat = [
     {
       name: 'Grumpy',
       activities: ['be grumpy', 'eat food']
@@ -87,7 +118,6 @@ var cat = {
       activities: ['sleep', 'pre-sleep naps']
     }
   ]
-}
 // Do not edit the code above.
 
 /*
@@ -100,7 +130,24 @@ var cat = {
 var grumpyActivity;
 var fluffy2ndFriend;
 
+for(let i = 0; i < cat.length; i++){
+  for(let key in cat){
+    
+    if(cat[key].activities[1] === 'eat food'){
+      // console.log(cat[key].activities[1])
+       grumpyActivity = cat[key].activities[1]
+      // console.log(cat[key].activities[1])
+    }
 
+    if(cat[1].name === 'Lazy Bones'){
+      // console.log(cat[1].name)
+       fluffy2ndFriend = cat[1].name
+      // console.log(cat[key].activities[1])
+    }
+    
+    cat[key].name = fluffy2ndFriend
+  }
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -139,7 +186,15 @@ var myCar = {
 */
 
 //Code Here
-
+function recordCleaner(){
+  for(var key in myCar){
+    for(let i = 0; i < myCar.accidents.length; i++){
+      if(myCar.accidents[i].atFaultForAccident === true){
+        myCar.accidents[i].atFaultForAccident = false
+      }
+    }
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -158,5 +213,21 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
+function looper(){
+  for(let i = 0; i < numsArr.length; i++){ //runs 3 times
+    // console.log(numsArr[i])
+    for(let j = 0; j < numsArr[i].length; j++){//runs 4 times, then 2, then five
+      // console.log('ran', j)
+      // console.log(numsArr[i][j])
+      numsArr[j].map((element, index, array) => {
+        console.log(element)
+        if(element % 2 === 0){
+          numsArr.splice(index, 1, 'even')
+          console.log(numsArr)
+        }
+      })
+    }
+  }
+  return numsArr
+}
 
